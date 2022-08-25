@@ -1,10 +1,11 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Header from '../../../src/components/Header';
 
 describe('Test header component', () => {
   beforeEach(() => {
-    render(<Header />);
+    render(<Header contentTitle="some title" />);
   });
 
   it('Header should have title text', () => {
