@@ -15,13 +15,13 @@ function Home() {
     <div>
       <Header contentTitle="Física" />
       <ContentName>Matérias</ContentName>
+      <AddSubjectsButton />
       <SubjectCardsContainer>
         <SubjectCard subject={subjectMock} />
         <SubjectCard subject={subjectMock} />
         <SubjectCard subject={subjectMock} />
         <SubjectCard subject={subjectMock} />
       </SubjectCardsContainer>
-      <AddSubjectsButton />
     </div>
   );
 }
