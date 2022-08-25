@@ -25,16 +25,4 @@ describe('Test SubjectCard component', () => {
 
     expect(subjectDescription).toBeInTheDocument();
   });
-
-  it('SubjectCard should have a edit subject button', () => {
-    const editSubjectButton = screen.getAllByRole('button');
-
-    expect(editSubjectButton[0]).toBeInTheDocument();
-  });
-
-  it('SubjectCard should have a delete subject button', () => {
-    const editSubjectButton = screen.getAllByRole('button');
-
-    expect(editSubjectButton[1]).toBeInTheDocument();
-  });
 });

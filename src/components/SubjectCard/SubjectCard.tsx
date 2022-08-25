@@ -1,27 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BsThreeDotsVertical } from 'react-icons/bs';
+import {
+  SubjectCardContainer,
+  SubjectCardDescriptionContainer,
+  SubjectCardDotsOptions,
+  SubjectCardHeader,
+  SubjectCardHeaderDescription,
+  SubjectCardHeaderTitle,
+} from '.';
+import MenuOptions from '../MenusOptions/MenuOptions';
 
 interface SubjectCardPropsShape {
-    subject: {
-        name: string;
-        description: string;
-        timestamps: string;
-    }
+  subject: {
+    name: string;
+    description: string;
+    timestamps: string;
+  };
 }
 
-function SubjectCard({ subject }:SubjectCardPropsShape) {
-  return (
-    <div>
-      <div>
-        <h2>{subject.name}</h2>
-        <span>{subject.timestamps}</span>
-      </div>
-      <p>
-        {subject.description}
-      </p>
+function SubjectCard({ subject }: SubjectCardPropsShape) {
+  const [isActive, setIsActive] = useState(false);
 
-      <button type="button">Editar</button>
-      <button type="button">Excluir</button>
-    </div>
+  return (
+    <SubjectCardContainer>
+      <SubjectCardHeader>
+        <SubjectCardHeaderTitle>{subject.name}</SubjectCardHeaderTitle>
+        <span>{subject.timestamps}</span>
+      </SubjectCardHeader>
+      <SubjectCardDescriptionContainer>
+        <SubjectCardHeaderDescription>
+          {subject.description}
+        </SubjectCardHeaderDescription>
+        <div>
+          <SubjectCardDotsOptions onClick={() => setIsActive(!isActive)}>
+            <BsThreeDotsVertical />
+          </SubjectCardDotsOptions>
+          {isActive && <MenuOptions />}
+        </div>
+      </SubjectCardDescriptionContainer>
+    </SubjectCardContainer>
   );
 }
 

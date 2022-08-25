@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ContentName = styled.h2`
+export const ContentName = styled.h2`
     text-align: center;
     margin-bottom: 1.2em;
 
@@ -8,4 +8,11 @@ const ContentName = styled.h2`
     color: #505050;
 `;
 
-export default ContentName;
+export const SubjectCardsContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+
+    margin-left: 1em;
+    margin-right: 1em;
+`;
