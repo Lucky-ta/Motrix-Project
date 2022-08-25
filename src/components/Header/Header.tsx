@@ -1,4 +1,5 @@
 import React from 'react';
+import HeaderContainer from '.';
 
 interface HeaderPropsShape {
   contentTitle: string;
@@ -6,9 +7,9 @@ interface HeaderPropsShape {
 
 function Header({ contentTitle }:HeaderPropsShape) {
   return (
-    <div>
+    <HeaderContainer>
       <h1>{contentTitle}</h1>
-    </div>
+    </HeaderContainer>
   );
 }
 
