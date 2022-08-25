@@ -1,5 +1,5 @@
 import React from 'react';
-import AddSubjectsButton from '../components/addSubjectsButton';
+import AddSubjectsButton from '../components/AddSubjectsButton';
 import Header from '../components/Header';
 
 function Home() {
