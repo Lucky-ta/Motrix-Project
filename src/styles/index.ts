@@ -15,4 +15,8 @@ export const SubjectCardsContainer = styled.div`
 
     margin-left: 1em;
     margin-right: 1em;
+
+    @media screen and (min-width: 700px) {
+        grid-template-columns: 1fr 1fr;
+}
 `;
