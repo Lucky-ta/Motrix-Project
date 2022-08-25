@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import SubjectCard from '../../../src/components/SubjectCard';
+import SubjectCard from '../../../src/components/SubjectCard/SubjectCard';
 
 const subjectMock = {
   name: 'MRU',

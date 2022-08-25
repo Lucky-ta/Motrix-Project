@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import Header from '../../../src/components/Header';
+import Header from '../../../src/components/Header/Header';
 
 describe('Test header component', () => {
   beforeEach(() => {

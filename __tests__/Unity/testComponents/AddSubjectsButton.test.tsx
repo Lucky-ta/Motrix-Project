@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import AddSubjectButton from '../../../src/components/AddSubjectsButton';
+import AddSubjectButton from '../../../src/components/AddSubjectButton/AddSubjectsButton';
 
 describe('Test addSubjectButton component', () => {
   beforeEach(() => {

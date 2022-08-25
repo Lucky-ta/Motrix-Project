@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import SubjectModal from '../../../src/components/SubjectModal';
+import SubjectModal from '../../../src/components/SubjectModal/SubjectModal';
 
 describe('Test SubjectModal component', () => {
   beforeEach(() => {
