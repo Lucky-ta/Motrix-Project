@@ -2,6 +2,7 @@ import React from 'react';
 import AddSubjectsButton from '../components/AddSubjectButton/AddSubjectsButton';
 import Header from '../components/Header/Header';
 import SubjectCard from '../components/SubjectCard/SubjectCard';
+import ContentName from '../styles';
 
 function Home() {
   const subjectMock = {
@@ -12,7 +13,7 @@ function Home() {
   return (
     <div>
       <Header contentTitle="Física" />
-      <h2>Matérias</h2>
+      <ContentName>Matérias</ContentName>
       <div>
         <SubjectCard subject={subjectMock} />
       </div>

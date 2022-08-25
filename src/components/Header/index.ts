@@ -9,7 +9,7 @@ const HeaderContainer = styled.div`
 
     align-items: center;
     padding-left: 3em;
-    margin-bottom: 2em;
+    margin-bottom: 1.6em;
 `;
 
 export default HeaderContainer;
