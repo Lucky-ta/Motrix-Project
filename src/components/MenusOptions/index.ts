@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const MenuOptionsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 1.6em;
+    position: relative;
+    right: 1em;
     gap: 0.6em;
+    width: 1em;
 `;
 
 export const MenuOptionsButtons = styled.button`
