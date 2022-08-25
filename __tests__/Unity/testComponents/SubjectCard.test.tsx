@@ -21,7 +21,7 @@ describe('Test SubjectCard component', () => {
   });
 
   it('SubjectCard should have a description', () => {
-    const subjectDescription = screen.getByPlaceholderText(/Uma matéria do primeiro ano/i);
+    const subjectDescription = screen.getByText(/Uma matéria do primeiro ano/i);
 
     expect(subjectDescription).toBeInTheDocument();
   });

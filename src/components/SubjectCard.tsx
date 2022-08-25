@@ -11,7 +11,16 @@ interface SubjectCardPropsShape {
 function SubjectCard({ subject }:SubjectCardPropsShape) {
   return (
     <div>
-        subject card
+      <div>
+        <h2>{subject.name}</h2>
+        <span>{subject.timestamps}</span>
+      </div>
+      <p>
+        {subject.description}
+      </p>
+
+      <button type="button">Editar</button>
+      <button type="button">Excluir</button>
     </div>
   );
 }
