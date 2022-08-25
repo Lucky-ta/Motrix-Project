@@ -1,8 +1,16 @@
 import React from 'react';
 
 function SubjectModal() {
+  const createSubject = () => {
+    console.log('materia criada!');
+  };
+
   return (
-    <div>SUbject Modal</div>
+    <form>
+      <input placeholder="Nome da matéria" type="text" />
+      <textarea placeholder="Descrição" name="" id="" cols={30} rows={10} />
+      <button onClick={createSubject} type="button">Adicionar matéria</button>
+    </form>
   );
 }
 

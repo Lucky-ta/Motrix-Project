@@ -9,13 +9,13 @@ describe('Test SubjectModal component', () => {
   });
 
   it('SubjectModal should have a subject name input', () => {
-    const subjectNameInput = screen.getByPlaceholderText(/Subject name/i);
+    const subjectNameInput = screen.getByPlaceholderText(/Nome da matéria/i);
 
     expect(subjectNameInput).toBeInTheDocument();
   });
 
   it('SubjectModal should have a subject text area description', () => {
-    const subjectDescriptionArea = screen.getByRole('textbox');
+    const subjectDescriptionArea = screen.getByPlaceholderText(/Descrição/i);
 
     expect(subjectDescriptionArea).toBeInTheDocument();
   });
