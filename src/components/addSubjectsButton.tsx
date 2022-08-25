@@ -1,7 +1,11 @@
 import React from 'react';
 
 function AddSubjectsButton() {
-  return <div>subjects button</div>;
+  const openNewSubjectCard = () => {
+    console.log('Card open');
+  };
+
+  return <button onClick={openNewSubjectCard} type="button">+</button>;
 }
 
 export default AddSubjectsButton;
