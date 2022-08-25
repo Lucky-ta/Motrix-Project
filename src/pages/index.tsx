@@ -6,6 +6,7 @@ function Home() {
   return (
     <div>
       <Header contentTitle="Física" />
+      <h2>Matérias</h2>
       <AddSubjectsButton />
     </div>
   );

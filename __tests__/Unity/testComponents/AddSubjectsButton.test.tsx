@@ -8,7 +8,7 @@ describe('Test addSubjectButton component', () => {
     render(<AddSubjectButton />);
   });
 
-  it('Header should have title text', () => {
+  it('addSubjectButton should have a button', () => {
     const AddSubjectBtn = screen.getByRole('button');
 
     expect(AddSubjectBtn).toBeInTheDocument();
