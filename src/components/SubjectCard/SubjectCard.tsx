@@ -40,7 +40,7 @@ function SubjectCard({ subject }: SubjectCardPropsShape) {
           <SubjectCardDotsOptions onClick={setModalVisibility}>
             <BsThreeDotsVertical />
           </SubjectCardDotsOptions>
-          {isActive && <MenuOptions subjectId={subject.id} />}
+          {isActive && <MenuOptions subject={subject} />}
         </div>
       </SubjectCardDescriptionContainer>
     </SubjectCardContainer>

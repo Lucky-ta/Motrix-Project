@@ -11,22 +11,11 @@ export type SubjectShape = {
 interface MyContextShape {
   isModalVisible: boolean;
   setIsModalVisible: (value: boolean) => void;
-  currentContent: SubjectShape;
-  setCurrentContent: (value: SubjectShape) => void;
 }
-
-export const subjectIniitalValue: SubjectShape = {
-  id: 0,
-  name: '',
-  description: '',
-  timestamps: '',
-};
 
 const data: MyContextShape = {
   isModalVisible: false,
   setIsModalVisible: () => {},
-  currentContent: subjectIniitalValue,
-  setCurrentContent: () => {},
 };
 
 const MyContext = createContext<MyContextShape>(data);

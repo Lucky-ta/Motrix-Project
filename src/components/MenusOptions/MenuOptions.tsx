@@ -1,19 +1,21 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useContext } from 'react';
 import { MenuOptionsButtons, MenuOptionsContainer } from '.';
+import MyContext, { SubjectShape } from '../../contexts/MyContext';
 
 interface MenuOptionsPropsShape {
-  subjectId: number;
+  subject: SubjectShape;
 }
 
-function MenuOptions({ subjectId }: MenuOptionsPropsShape) {
+function MenuOptions({ subject }: MenuOptionsPropsShape) {
   const router = useRouter();
   const editSubject = () => {
-    router.push(`/subject/${subjectId}`);
+    router.push(`/subject/${subject.id}`);
+
   };
 
   const deleteSubject = () => {
-    console.log('REQUEST DELETE', subjectId);
+    console.log('REQUEST DELETE', subject.id);
   };
 
   return (
