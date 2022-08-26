@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+import React from 'react';
 import { MenuOptionsButtons, MenuOptionsContainer } from '.';
-import MyContext, { SubjectShape } from '../../contexts/MyContext';
+import { SubjectShape } from '../../contexts/MyContext';
 
 interface MenuOptionsPropsShape {
   subject: SubjectShape;
@@ -11,7 +11,6 @@ function MenuOptions({ subject }: MenuOptionsPropsShape) {
   const router = useRouter();
   const editSubject = () => {
     router.push(`/subject/${subject.id}`);
-
   };
 
   const deleteSubject = () => {
