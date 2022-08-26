@@ -2,6 +2,7 @@ import React from 'react';
 import AddSubjectsButton from '../components/AddSubjectButton/AddSubjectsButton';
 import Header from '../components/Header/Header';
 import SubjectCard from '../components/SubjectCard/SubjectCard';
+import SubjectModal from '../components/SubjectModal/SubjectModal';
 import { ContentName, SubjectCardsContainer } from '../styles';
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
         <SubjectCard subject={subjectMock} />
         <SubjectCard subject={subjectMock} />
       </SubjectCardsContainer>
+      <SubjectModal />
     </div>
   );
 }
