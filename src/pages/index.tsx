@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AddSubjectsButton from '../components/AddSubjectButton/AddSubjectsButton';
 import Header from '../components/Header/Header';
 import SubjectCard from '../components/SubjectCard/SubjectCard';
 import SubjectModal from '../components/SubjectModal/SubjectModal';
+import MyContext from '../contexts/MyContext';
 import { ContentName, SubjectCardsContainer } from '../styles';
 
 function Home() {
+  const { isModalVisible } = useContext(MyContext);
   const subjectMock = {
     name: 'MRU',
     description:
@@ -13,7 +15,7 @@ function Home() {
     timestamps: '25/08/2022',
   };
   return (
-    <div>
+    <div className={isModalVisible ? 'fade' : ''}>
       <Header contentTitle="Física" />
       <ContentName>Matérias</ContentName>
       <AddSubjectsButton />
@@ -23,7 +25,7 @@ function Home() {
         <SubjectCard subject={subjectMock} />
         <SubjectCard subject={subjectMock} />
       </SubjectCardsContainer>
-      <SubjectModal />
+      {isModalVisible && (<SubjectModal />)}
     </div>
   );
 }

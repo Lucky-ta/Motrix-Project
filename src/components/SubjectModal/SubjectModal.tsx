@@ -1,16 +1,40 @@
-import React from 'react';
-import { SubjectModalContainer } from '.';
+import React, { useContext } from 'react';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
+import {
+  CloseModalButton,
+  SubjectModalButton,
+  SubjectModalContainer,
+  SubjectModalInput,
+  SubjectModalTextArea,
+} from '.';
+import MyContext from '../../contexts/MyContext';
 
 function SubjectModal() {
+  const { setIsModalVisible } = useContext(MyContext);
   const createSubject = () => {
     console.log('materia criada!');
   };
 
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <SubjectModalContainer>
-      <input placeholder="Nome da matéria" type="text" />
-      <textarea placeholder="Descrição" name="" id="" cols={30} rows={10} />
-      <button onClick={createSubject} type="button">Adicionar matéria</button>
+      <SubjectModalInput placeholder="Nome da matéria" type="text" />
+      <CloseModalButton onClick={closeModal} type="button">
+        <AiOutlineCloseCircle />
+      </CloseModalButton>
+      <SubjectModalTextArea
+        placeholder="Descrição"
+        name=""
+        id=""
+        cols={30}
+        rows={10}
+      />
+      <SubjectModalButton onClick={createSubject} type="button">
+        Adicionar matéria
+      </SubjectModalButton>
     </SubjectModalContainer>
   );
 }
