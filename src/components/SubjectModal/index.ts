@@ -7,7 +7,7 @@ export const SubjectModalContainer = styled.form`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #696969;
+    background-color: #848884;
 
     height: 25em;
     width: 100%;
@@ -18,7 +18,7 @@ export const SubjectModalContainer = styled.form`
     padding-left: 1em;
     padding-right: 1em;
 
-
+    z-index: 99;
 `;
 
 export const SubjectModalInput = styled.input`

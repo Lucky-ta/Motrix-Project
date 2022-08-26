@@ -20,3 +20,12 @@ export const SubjectCardsContainer = styled.div`
         grid-template-columns: 1fr 1fr;
 }
 `;
+
+export const GlobalFade = styled.div`
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;

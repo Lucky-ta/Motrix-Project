@@ -4,7 +4,7 @@ import Header from '../components/Header/Header';
 import SubjectCard from '../components/SubjectCard/SubjectCard';
 import SubjectModal from '../components/SubjectModal/SubjectModal';
 import MyContext from '../contexts/MyContext';
-import { ContentName, SubjectCardsContainer } from '../styles';
+import { ContentName, GlobalFade, SubjectCardsContainer } from '../styles';
 
 function Home() {
   const { isModalVisible } = useContext(MyContext);
@@ -16,7 +16,7 @@ function Home() {
     id: 3,
   };
   return (
-    <div className={isModalVisible ? 'fade' : ''}>
+    <div>
       <Header contentTitle="Física" />
       <ContentName>Matérias</ContentName>
       <AddSubjectsButton />
@@ -27,6 +27,7 @@ function Home() {
         <SubjectCard subject={subjectMock} />
       </SubjectCardsContainer>
       {isModalVisible && (<SubjectModal />)}
+      {isModalVisible && (<GlobalFade />)}
     </div>
   );
 }

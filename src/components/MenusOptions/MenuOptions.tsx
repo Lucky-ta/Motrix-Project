@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import { MenuOptionsButtons, MenuOptionsContainer } from '.';
 
@@ -6,8 +7,9 @@ interface MenuOptionsPropsShape {
 }
 
 function MenuOptions({ subjectId }: MenuOptionsPropsShape) {
+  const router = useRouter();
   const editSubject = () => {
-    console.log('EDIT PAGE');
+    router.push(`/subject/${subjectId}`);
   };
 
   const deleteSubject = () => {
