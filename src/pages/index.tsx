@@ -13,6 +13,7 @@ function Home() {
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, accusamus in corporis soluta iure, enim aliquam recusandae reiciendis provident corrupti qui labore! Culpa consequuntur accusantium nam obcaecati voluptas, consequatur quia.',
     timestamps: '25/08/2022',
+    id: 3,
   };
   return (
     <div className={isModalVisible ? 'fade' : ''}>

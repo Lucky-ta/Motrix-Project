@@ -12,6 +12,7 @@ import MenuOptions from '../MenusOptions/MenuOptions';
 
 interface SubjectCardPropsShape {
   subject: {
+    id: number;
     name: string;
     description: string;
     timestamps: string;
@@ -20,6 +21,10 @@ interface SubjectCardPropsShape {
 
 function SubjectCard({ subject }: SubjectCardPropsShape) {
   const [isActive, setIsActive] = useState(false);
+
+  const setModalVisibility = () => {
+    setIsActive(!isActive);
+  };
 
   return (
     <SubjectCardContainer>
@@ -32,10 +37,10 @@ function SubjectCard({ subject }: SubjectCardPropsShape) {
           {subject.description}
         </SubjectCardHeaderDescription>
         <div>
-          <SubjectCardDotsOptions onClick={() => setIsActive(!isActive)}>
+          <SubjectCardDotsOptions onClick={setModalVisibility}>
             <BsThreeDotsVertical />
           </SubjectCardDotsOptions>
-          {isActive && <MenuOptions />}
+          {isActive && <MenuOptions subjectId={subject.id} />}
         </div>
       </SubjectCardDescriptionContainer>
     </SubjectCardContainer>
