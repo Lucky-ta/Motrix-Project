@@ -46,7 +46,7 @@ function EditForm({ subject }: EditFormPropsShape) {
 
   return (
     <EditFormContainer>
-      <EditFormReturnButton onClick={redirectToHomePage} type="button">
+      <EditFormReturnButton onClick={() => redirectToHomePage(router)} type="button">
         Voltar
       </EditFormReturnButton>
       <EditFormLabel htmlFor="name">Nome</EditFormLabel>
