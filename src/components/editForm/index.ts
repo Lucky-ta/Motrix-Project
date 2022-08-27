@@ -43,17 +43,16 @@ export const EditFormTextarea = styled.textarea`
 
 export const EditFormButton = styled.button`
     position: absolute;
-    bottom: 1em;
     right: 1em;
-
     font-size: 1.6em;
-
     background: none;
     border: none;
     background-color: #50D050;
     color: white;
     padding: 0.6em;
     border-radius: 10px;
+    top: 4em;
+    right: 0.4em;
 
     &&:hover {
         color: #50D050;
@@ -63,12 +62,6 @@ export const EditFormButton = styled.button`
         cursor: pointer;
     }
 
-    @media screen and (max-width: 830px) {
-        top: 4em;
-        right: 0.4em;
-        bottom: initial;
-        
-    }
 `;
 
 export const EditFormLabel = styled.label`
@@ -78,4 +71,19 @@ export const EditFormLabel = styled.label`
     font-weight: 700;
 
     transform: translate(0em, 2em);
+`;
+
+export const EditFormReturnButton = styled.button`
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 1em;
+    align-self: flex-start;
+    padding-left: 2em;
+
+    &&:hover {
+        cursor: pointer;
+        color: #50D050;
+    }
 `;

@@ -1,21 +1,28 @@
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import {
   EditFormButton,
   EditFormContainer,
   EditFormInput,
   EditFormLabel,
+  EditFormReturnButton,
   EditFormTextarea,
 } from '.';
 import { SubjectShape } from '../../contexts/MyContext';
+import { updateSubject } from '../../services/subjectApis';
 
 interface EditFormPropsShape {
   subject: SubjectShape;
 }
 
 function EditForm({ subject }: EditFormPropsShape) {
-  const [editSubject, setEditSubject] = useState({});
-  const saveSubjectChanges = () => {
-    console.log('salvo mudanças', editSubject);
+  const router = useRouter();
+  const [editSubject, setEditSubject] = useState({ name: '', description: '' });
+  const saveSubjectChanges = async () => {
+    const response = await updateSubject(subject.id, editSubject);
+    if (response.message) {
+      window.alert('Informações inválidas!');
+    }
   };
 
   const handleForomData = ({ target }: any) => {
@@ -25,8 +32,15 @@ function EditForm({ subject }: EditFormPropsShape) {
     });
   };
 
+  const redirectToHomePage = () => {
+    router.push('/');
+  };
+
   return (
     <EditFormContainer>
+      <EditFormReturnButton onClick={redirectToHomePage} type="button">
+        Voltar
+      </EditFormReturnButton>
       <EditFormLabel htmlFor="name">Nome</EditFormLabel>
       <EditFormInput
         id="name"
