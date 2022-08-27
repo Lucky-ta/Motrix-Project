@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import {
   CloseModalButton,
@@ -8,31 +8,47 @@ import {
   SubjectModalTextArea,
 } from '.';
 import MyContext from '../../contexts/MyContext';
+import { createSubject } from '../../services/subjectApis';
 
 function SubjectModal() {
+  const [subject, setSubject] = useState({ name: '', description: '' });
   const { setIsModalVisible } = useContext(MyContext);
-  const createSubject = () => {
-    console.log('materia criada!');
+
+  const createNewSubject = async () => {
+    await createSubject(subject);
   };
 
   const closeModal = () => {
     setIsModalVisible(false);
   };
 
+  const handleForomData = ({ target }: any) => {
+    setSubject({
+      ...subject,
+      [target.id]: target.value,
+    });
+  };
+
   return (
     <SubjectModalContainer>
-      <SubjectModalInput placeholder="Nome da matéria" type="text" />
+      <SubjectModalInput
+        onChange={(e) => handleForomData(e)}
+        id="name"
+        placeholder="Nome da matéria"
+        type="text"
+      />
       <CloseModalButton onClick={closeModal} type="button">
         <AiOutlineCloseCircle />
       </CloseModalButton>
       <SubjectModalTextArea
         placeholder="Descrição"
         name=""
-        id=""
+        id="description"
         cols={30}
         rows={10}
+        onChange={(e) => handleForomData(e)}
       />
-      <SubjectModalButton onClick={createSubject} type="button">
+      <SubjectModalButton onClick={createNewSubject} type="button">
         Adicionar matéria
       </SubjectModalButton>
     </SubjectModalContainer>

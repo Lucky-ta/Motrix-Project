@@ -3,33 +3,40 @@ import AddSubjectsButton from '../components/AddSubjectButton/AddSubjectsButton'
 import Header from '../components/Header/Header';
 import SubjectCard from '../components/SubjectCard/SubjectCard';
 import SubjectModal from '../components/SubjectModal/SubjectModal';
-import MyContext from '../contexts/MyContext';
+import MyContext, { SubjectShape } from '../contexts/MyContext';
+import { getAllSubjects } from '../services/subjectApis';
 import { ContentName, GlobalFade, SubjectCardsContainer } from '../styles';
 
-function Home() {
+interface HomePropsShape {
+  data: SubjectShape[];
+}
+
+function Home({ data }: HomePropsShape) {
   const { isModalVisible } = useContext(MyContext);
-  const subjectMock = {
-    name: 'MRU',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, accusamus in corporis soluta iure, enim aliquam recusandae reiciendis provident corrupti qui labore! Culpa consequuntur accusantium nam obcaecati voluptas, consequatur quia.',
-    timestamps: '25/08/2022',
-    id: 3,
-  };
+
   return (
     <div>
       <Header contentTitle="Física" />
       <ContentName>Matérias</ContentName>
       <AddSubjectsButton />
       <SubjectCardsContainer>
-        <SubjectCard subject={subjectMock} />
-        <SubjectCard subject={subjectMock} />
-        <SubjectCard subject={subjectMock} />
-        <SubjectCard subject={subjectMock} />
+        {data.map((subject) => (
+          <SubjectCard key={subject.id} subject={subject} />
+        ))}
       </SubjectCardsContainer>
-      {isModalVisible && (<SubjectModal />)}
-      {isModalVisible && (<GlobalFade />)}
+      {isModalVisible && <SubjectModal />}
+      {isModalVisible && <GlobalFade />}
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const subjects = await getAllSubjects();
+  return {
+    props: {
+      data: subjects,
+    },
+  };
 }
 
 export default Home;

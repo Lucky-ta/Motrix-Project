@@ -4,9 +4,10 @@ import { render, screen } from '@testing-library/react';
 import SubjectCard from '../../../src/components/SubjectCard/SubjectCard';
 
 const subjectMock = {
+  id: 1,
   name: 'MRU',
   description: 'Uma matéria do primeiro ano',
-  timestamps: '25/08/2022',
+  createdAt: '25/08/2022',
 };
 
 describe('Test SubjectCard component', () => {

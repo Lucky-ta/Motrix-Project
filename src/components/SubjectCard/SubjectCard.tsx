@@ -8,6 +8,7 @@ import {
   SubjectCardHeaderDescription,
   SubjectCardHeaderTitle,
 } from '.';
+import formatDate from '../../utils/formarDate';
 import MenuOptions from '../MenusOptions/MenuOptions';
 
 interface SubjectCardPropsShape {
@@ -15,7 +16,7 @@ interface SubjectCardPropsShape {
     id: number;
     name: string;
     description: string;
-    timestamps: string;
+    createdAt: string;
   };
 }
 
@@ -26,11 +27,12 @@ function SubjectCard({ subject }: SubjectCardPropsShape) {
     setIsActive(!isActive);
   };
 
+  const formatedDate = formatDate(subject.createdAt);
   return (
     <SubjectCardContainer>
       <SubjectCardHeader>
         <SubjectCardHeaderTitle>{subject.name}</SubjectCardHeaderTitle>
-        <span>{subject.timestamps}</span>
+        <span>{formatedDate}</span>
       </SubjectCardHeader>
       <SubjectCardDescriptionContainer>
         <SubjectCardHeaderDescription>

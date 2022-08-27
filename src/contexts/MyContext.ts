@@ -5,7 +5,7 @@ export type SubjectShape = {
   id: number;
   name: string;
   description: string;
-  timestamps: string;
+  createdAt: string;
 }
 
 interface MyContextShape {

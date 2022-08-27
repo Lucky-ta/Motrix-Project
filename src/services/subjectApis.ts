@@ -34,7 +34,7 @@ const createSubject = async (subject: SubjectParamsShape) => {
 
 const updateSubject = async (subjectId: number, subject: SubjectParamsShape) => {
   try {
-    const response = await Api.put(`/subject${subjectId}`, subject);
+    const response = await Api.put(`/subject/${subjectId}`, subject);
     return response.data;
   } catch (e: any) {
     return { message: e.message };
@@ -43,7 +43,7 @@ const updateSubject = async (subjectId: number, subject: SubjectParamsShape) => 
 
 const deleteSubject = async (subjectId: number) => {
   try {
-    const response = await Api.delete(`/subject${subjectId}`);
+    const response = await Api.delete(`/subject/${subjectId}`);
     return response.data;
   } catch (e: any) {
     return { message: e.message };

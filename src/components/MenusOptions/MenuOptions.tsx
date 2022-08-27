@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { MenuOptionsButtons, MenuOptionsContainer } from '.';
 import { SubjectShape } from '../../contexts/MyContext';
+import { deleteSubject } from '../../services/subjectApis';
 
 interface MenuOptionsPropsShape {
   subject: SubjectShape;
@@ -13,8 +14,11 @@ function MenuOptions({ subject }: MenuOptionsPropsShape) {
     router.push(`/subject/${subject.id}`);
   };
 
-  const deleteSubject = () => {
+  const excludeSubject = async () => {
     console.log('REQUEST DELETE', subject.id);
+    const response = await deleteSubject(subject.id);
+    console.log(response);
+
   };
 
   return (
@@ -22,7 +26,7 @@ function MenuOptions({ subject }: MenuOptionsPropsShape) {
       <MenuOptionsButtons onClick={editSubject} type="button">
         Editar
       </MenuOptionsButtons>
-      <MenuOptionsButtons onClick={deleteSubject} type="button">
+      <MenuOptionsButtons onClick={excludeSubject} type="button">
         Excluir
       </MenuOptionsButtons>
     </MenuOptionsContainer>
