@@ -21,7 +21,9 @@ function SubjectModal() {
     const response = await createSubject(subject);
     if (response.message) {
       window.alert('Não foi possível criar');
-    } redirectToHomePage(router);
+    }
+    setIsModalVisible(false);
+    redirectToHomePage(router);
   };
 
   const closeModal = () => {
