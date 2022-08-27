@@ -16,7 +16,7 @@ const getAllSubjects = async () => {
 
 const getSubjectById = async (id: number) => {
   try {
-    const response = await Api.get(`/subject${id}`);
+    const response = await Api.get(`/subject/${id}`);
     return response.data;
   } catch (e: any) {
     return { message: e.message };

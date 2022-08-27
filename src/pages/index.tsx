@@ -1,3 +1,4 @@
+import { GetServerSideProps } from 'next';
 import React, { useContext } from 'react';
 import AddSubjectsButton from '../components/AddSubjectButton/AddSubjectsButton';
 import Header from '../components/Header/Header';
@@ -30,13 +31,13 @@ function Home({ data }: HomePropsShape) {
   );
 }
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async () => {
   const subjects = await getAllSubjects();
   return {
     props: {
       data: subjects,
     },
   };
-}
+};
 
 export default Home;

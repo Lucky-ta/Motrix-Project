@@ -15,10 +15,7 @@ function MenuOptions({ subject }: MenuOptionsPropsShape) {
   };
 
   const excludeSubject = async () => {
-    console.log('REQUEST DELETE', subject.id);
-    const response = await deleteSubject(subject.id);
-    console.log(response);
-
+    await deleteSubject(subject.id);
   };
 
   return (
