@@ -67,10 +67,7 @@ function EditForm({ subject }: EditFormPropsShape) {
         rows={10}
         defaultValue={subject.description}
       />
-      <EditFormButton
-        type="button"
-        onClick={saveSubjectChanges}
-      >
+      <EditFormButton type="button" onClick={saveSubjectChanges}>
         Salvar
       </EditFormButton>
     </EditFormContainer>

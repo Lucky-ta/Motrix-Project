@@ -5,7 +5,7 @@ interface HeaderPropsShape {
   contentTitle: string;
 }
 
-function Header({ contentTitle }:HeaderPropsShape) {
+function Header({ contentTitle }: HeaderPropsShape) {
   return (
     <HeaderContainer>
       <h1>{contentTitle}</h1>
