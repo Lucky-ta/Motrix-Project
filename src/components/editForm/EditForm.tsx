@@ -25,7 +25,9 @@ function EditForm({ subject }: EditFormPropsShape) {
 
   const formatEditSubject = () => {
     if (editSubject.name.length === 0) editSubject.name = subject.name;
-    if (editSubject.description.length === 0) { editSubject.description = subject.description; }
+    if (editSubject.description.length === 0) {
+      editSubject.description = subject.description;
+    }
   };
 
   const saveSubjectChanges = async () => {
@@ -65,7 +67,10 @@ function EditForm({ subject }: EditFormPropsShape) {
         rows={10}
         defaultValue={subject.description}
       />
-      <EditFormButton type="button" onClick={saveSubjectChanges}>
+      <EditFormButton
+        type="button"
+        onClick={saveSubjectChanges}
+      >
         Salvar
       </EditFormButton>
     </EditFormContainer>

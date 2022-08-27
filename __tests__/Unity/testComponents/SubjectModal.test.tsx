@@ -19,10 +19,4 @@ describe('Test SubjectModal component', () => {
 
     expect(subjectDescriptionArea).toBeInTheDocument();
   });
-
-  it('SubjectModal should have a create subject button', () => {
-    const createSubjectButton = screen.getByRole('button');
-
-    expect(createSubjectButton).toBeInTheDocument();
-  });
 });

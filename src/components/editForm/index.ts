@@ -61,7 +61,6 @@ export const EditFormButton = styled.button`
 
         cursor: pointer;
     }
-
 `;
 
 export const EditFormLabel = styled.label`
