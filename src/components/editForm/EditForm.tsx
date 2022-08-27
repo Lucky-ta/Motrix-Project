@@ -10,6 +10,7 @@ import {
 } from '.';
 import { SubjectShape } from '../../contexts/MyContext';
 import { updateSubject } from '../../services/subjectApis';
+import redirectToHomePage from '../../utils/redirectToHomePage';
 
 interface EditFormPropsShape {
   subject: SubjectShape;
@@ -18,10 +19,6 @@ interface EditFormPropsShape {
 function EditForm({ subject }: EditFormPropsShape) {
   const router = useRouter();
   const [editSubject, setEditSubject] = useState({ name: '', description: '' });
-
-  const redirectToHomePage = () => {
-    router.push('/');
-  };
 
   const formatEditSubject = () => {
     if (editSubject.name.length === 0) editSubject.name = subject.name;
@@ -36,7 +33,7 @@ function EditForm({ subject }: EditFormPropsShape) {
     if (response.message) {
       window.alert('Informações inválidas!');
     } else {
-      redirectToHomePage();
+      redirectToHomePage(router);
     }
   };
 

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import {
@@ -9,8 +10,10 @@ import {
 } from '.';
 import MyContext from '../../contexts/MyContext';
 import { createSubject } from '../../services/subjectApis';
+import redirectToHomePage from '../../utils/redirectToHomePage';
 
 function SubjectModal() {
+  const router = useRouter();
   const [subject, setSubject] = useState({ name: '', description: '' });
   const { setIsModalVisible } = useContext(MyContext);
 
@@ -18,7 +21,7 @@ function SubjectModal() {
     const response = await createSubject(subject);
     if (response.message) {
       window.alert('Não foi possível criar');
-    }
+    } redirectToHomePage(router);
   };
 
   const closeModal = () => {

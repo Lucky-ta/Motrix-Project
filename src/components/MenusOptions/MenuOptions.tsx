@@ -3,6 +3,7 @@ import React from 'react';
 import { MenuOptionsButtons, MenuOptionsContainer } from '.';
 import { SubjectShape } from '../../contexts/MyContext';
 import { deleteSubject } from '../../services/subjectApis';
+import redirectToHomePage from '../../utils/redirectToHomePage';
 
 interface MenuOptionsPropsShape {
   subject: SubjectShape;
@@ -18,7 +19,7 @@ function MenuOptions({ subject }: MenuOptionsPropsShape) {
     const response = await deleteSubject(subject.id);
     if (response.message) {
       window.alert('Não foi possível excluir este item');
-    }
+    } redirectToHomePage(router);
   };
 
   return (
