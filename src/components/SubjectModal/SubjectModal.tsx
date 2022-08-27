@@ -15,7 +15,10 @@ function SubjectModal() {
   const { setIsModalVisible } = useContext(MyContext);
 
   const createNewSubject = async () => {
-    await createSubject(subject);
+    const response = await createSubject(subject);
+    if (response.message) {
+      window.alert('Não foi possível criar');
+    }
   };
 
   const closeModal = () => {

@@ -18,10 +18,23 @@ interface EditFormPropsShape {
 function EditForm({ subject }: EditFormPropsShape) {
   const router = useRouter();
   const [editSubject, setEditSubject] = useState({ name: '', description: '' });
+
+  const redirectToHomePage = () => {
+    router.push('/');
+  };
+
+  const formatEditSubject = () => {
+    if (editSubject.name.length === 0) editSubject.name = subject.name;
+    if (editSubject.description.length === 0) { editSubject.description = subject.description; }
+  };
+
   const saveSubjectChanges = async () => {
+    formatEditSubject();
     const response = await updateSubject(subject.id, editSubject);
     if (response.message) {
       window.alert('Informações inválidas!');
+    } else {
+      redirectToHomePage();
     }
   };
 
@@ -30,10 +43,6 @@ function EditForm({ subject }: EditFormPropsShape) {
       ...editSubject,
       [target.id]: target.value,
     });
-  };
-
-  const redirectToHomePage = () => {
-    router.push('/');
   };
 
   return (

@@ -15,7 +15,10 @@ function MenuOptions({ subject }: MenuOptionsPropsShape) {
   };
 
   const excludeSubject = async () => {
-    await deleteSubject(subject.id);
+    const response = await deleteSubject(subject.id);
+    if (response.message) {
+      window.alert('Não foi possível excluir este item');
+    }
   };
 
   return (
